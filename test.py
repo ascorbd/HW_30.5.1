@@ -19,7 +19,7 @@ def driver():
     driver.quit()
 
 
-"""Явное ожидание"""
+
 
 
 def test_show_my_pets(driver):
@@ -43,9 +43,9 @@ def test_show_my_pets(driver):
         parts = descriptions[i].text.split(", ")
         assert len(parts[0]) > 0
         assert len(parts[1]) > 0
-    assert wait.until(expected_conditions.text_to_be_present_in_element((By.TAG_NAME, 'h1'), "PetFriends"))
+    assert wait.until(expected_conditions.text_to_be_present_in_element((By.TAG_NAME, 'h1'), " PetFriends"))
     driver.find_element(By.CSS_SELECTOR, 'a[href="/all_pets"]').click()
-    assert wait.until(expected_conditions.text_to_be_present_in_element((By.TAG_NAME, 'h2'), "All"))
+    assert wait.until(expected_conditions.text_to_be_present_in_element((By.TAG_NAME, 'h2'), " All"))
 
     # Ищем в теле таблицы все строки с полными данными питомцев (имя, порода, возраст, "х" удаления питомца):
     css_locator = 'tbody>tr'
