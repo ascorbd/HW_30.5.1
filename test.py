@@ -11,9 +11,9 @@ chromedriver_autoinstaller.install()
 @pytest.fixture(autouse=True)
 def driver():
     driver = webdriver.Chrome()
-  #  driver.implicitly_wait(10)
+    driver.implicitly_wait(10)
     driver.get('https://petfriends.skillfactory.ru/login')
- #  driver.find_element(By.CSS_SELECTOR, 'button[type="submit"]').click()
+    driver.find_element(By.CSS_SELECTOR, 'button[type="submit"]').click()
     driver.maximize_window()
     yield driver
     driver.quit()
